@@ -1,0 +1,13 @@
+# Folder for idea
+.idea/
+# Folder for target project
+target/
+# Folder for target project
+out/
+
+*.jar
+*.war
+*.ear
+
+# File for idea
+JFrame.iml

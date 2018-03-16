@@ -8,47 +8,47 @@ import java.awt.event.ActionListener;
  * Ваня специально для тебя делаю класс расширяемый от JFrame
  * !!Если ты до сих пор используешь NetBeans то я тебе сочувствую
  */
-public class MyJFrame extends JFrame{
-
+public class MyJFrame{
+    public static JFrame mainFrame;
     /**
      * Ваня внутри конструктора можно просто использовать методы класса JFrame
      * !!Если ты до сих пор используешь NetBeans то я тебе сочувствую
      */
     public MyJFrame(){
-
-        setTitle("Это первоначальны заголовок");
+        mainFrame = new JFrame();
+        mainFrame.setTitle("Это первоначальны заголовок");
         //Размеры
-        setSize(new Dimension(400,400));
+        mainFrame.setSize(new Dimension(400,400));
 
         // устанавливаем стиль размещения компнентов тект и т.д.
-        setLayout(new FlowLayout());
+        mainFrame.setLayout(new FlowLayout());
 
         JLabel jLabel_1 = new JLabel("1 Текст внутри окна");
         //Добавление на форму 1 вариант
-        this.add(jLabel_1);
+        mainFrame.add(jLabel_1);
 
 
         JLabel jLabel_2 = new JLabel("2 Текст внутри окна");
         //Добавление на форму 2 вариант
-        add(jLabel_2);
+        mainFrame.add(jLabel_2);
 
         // Устанавливаем что делать по нажатию на кнопку выход
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
 
         JButton button = new JButton("Изменить заголовок");
         button.addActionListener(new ButtonActionListener());
-        add(button);
+        mainFrame.add(button);
 
         // Отрисовка окна
-        setVisible(true);
+        mainFrame.setVisible(true);
 
     }
 
 
 
     public static void main(String[] args) {
-        JFrame myJFrame = new MyJFrame();
+        MyJFrame myJFrame = new MyJFrame();
 
     }
 
@@ -58,7 +58,7 @@ public class MyJFrame extends JFrame{
 
         public void actionPerformed(ActionEvent ae)
         {
-
+            mainFrame.setTitle("я статический");
         }
     }
 

@@ -37,11 +37,7 @@ public class MyJFrame extends JFrame{
 
 
         JButton button = new JButton("Изменить заголовок");
-        button.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                MyJFrame.this.setTitle("Новый заголовок");
-            }
-        } );
+        button.addActionListener(new ButtonActionListener());
         add(button);
 
         // Отрисовка окна
@@ -49,11 +45,22 @@ public class MyJFrame extends JFrame{
 
     }
 
+
+
     public static void main(String[] args) {
         JFrame myJFrame = new MyJFrame();
 
     }
 
+    // Inner class implementation
+    public static class ButtonActionListener implements ActionListener
+    {
+
+        public void actionPerformed(ActionEvent ae)
+        {
+
+        }
+    }
 
 
 
